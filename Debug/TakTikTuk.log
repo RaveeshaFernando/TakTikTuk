@@ -1,28 +1,2 @@
-﻿  Game.cpp
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(68): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(76): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(102): warning C4018: '<': signed/unsigned mismatch
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(109): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(124): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(137): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(468): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(482): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(529): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(530): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(531): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(532): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(536): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(537): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(538): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(539): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(540): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(547): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(548): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(549): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(550): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(555): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(556): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(557): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\raveesha fernando\documents\visual studio 2015\projects\taktiktuk\taktiktuk\game.cpp(558): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  TakTikTuk.vcxproj -> C:\Users\Raveesha Fernando\Documents\Visual Studio 2015\Projects\TakTikTuk\Debug\TakTikTuk.exe
+﻿  TakTikTuk.vcxproj -> C:\Users\Raveesha Fernando\Documents\Visual Studio 2015\Projects\TakTikTuk\Debug\TakTikTuk.exe
   TakTikTuk.vcxproj -> C:\Users\Raveesha Fernando\Documents\Visual Studio 2015\Projects\TakTikTuk\Debug\TakTikTuk.pdb (Partial PDB)

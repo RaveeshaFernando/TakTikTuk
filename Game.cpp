@@ -7,14 +7,14 @@
 
 using namespace std;
 
-int matrix[6][6];																		//Matrix to store the cells occupied by players
-int occupy_h[6][6];																		//Stores the Horizontal Winning instances
-int occupy_v[6][6];																		//Stores the Vertical Winning instances
-int occupy_d1[6][6];																	//Stores the Diagonal and Forward Winning Instances
-int occupy_d2[6][6];																	//Stores the Diagonal and Backward Winning Instances
-int flag, p1 = 0, p2 = 0, click_count = 0;												//Flag to change player's turn, p1,p2- Player Points Click_Count - Cont the mouse clicks
-bool gameover=false;																	//Boolean value to check whether the game is over or not
-string player1 = " ", player2 = " ",Count=" ";											//Casted values of P1,p2, and Click_Count to display
+int matrix[6][6];													//Matrix to store the cells occupied by players
+int occupy_h[6][6];													//Stores the Horizontal Winning instances
+int occupy_v[6][6];													//Stores the Vertical Winning instances
+int occupy_d1[6][6];												//Stores the Diagonal and Forward Winning Instances
+int occupy_d2[6][6];												//Stores the Diagonal and Backward Winning Instances
+int flag, p1 = 0, p2 = 0, click_count = 0;							//Flag to change player's turn, p1,p2- Player Points Click_Count - Cont the mouse clicks
+bool gameover=false;												//Boolean value to check whether the game is over or not
+string player1 = " ", player2 = " ",Count=" ";						//Casted values of P1,p2, and Click_Count to display
 
 void NewGame();
 void reshape(int,int);
@@ -24,7 +24,6 @@ void Interface();
 void GameStart(int, int, int, int);
 void WinInstance();
 void symbols();
-void DrawBars();
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
@@ -40,8 +39,8 @@ int main(int argc, char** argv) {
 }
 
 void NewGame() {
-	flag = 1;																			//To make the turn for the player 1											
-	for (int x = 0; x < 6; x++) {														//Loop to reset every value of the 5 matrices to 0 to start a new game
+	flag = 1;														//To make the turn for the player 1											
+	for (int x = 0; x < 6; x++) {									//Loop to reset every value of the 5 matrices to 0 to start a new game
 		for (int y = 0; y < 6; y++) {
 			matrix[x][y] = 0;
 			occupy_h[x][y] = 0;
@@ -50,27 +49,25 @@ void NewGame() {
 			occupy_d2[x][y] = 0;
 		}
 	}
-	glutReshapeFunc(reshape);															//
-	glutDisplayFunc(Display);															//Function to Display the Content
-	glutMouseFunc(GameStart);															//Function to get Mouse Inputs and Start the Game
+	glutReshapeFunc(reshape);										//
+	glutDisplayFunc(Display);										//Function to Display the Content
+	glutMouseFunc(GameStart);										//Function to get Mouse Inputs and Start the Game
 }
 
 void reshape(int x, int y) {
-	glViewport(0, 0, x, y);
-	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(0, x, y, 0, 0, 1);
 	glMatrixMode(GL_MODELVIEW);
 }
 
 void Display(void) {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);									//Clears the Color and Depth Buffers 
-	glClearColor(0.0, 0.0, 0.15, 1.0);													//Set the color for the window
+	glClear(GL_COLOR_BUFFER_BIT);									//Clears the Color 
+	glClearColor(0.0, 0.0, 0.15, 1.0);								//Set the color for the window
 
-	Interface();																		//Function to add all the polygons displayed
-	symbols();																			//Funtion to add Crosses,Rounds with the when the Game started and Update the player points
+	Interface();													//Function to add all the polygons displayed
+	symbols();														//Funtion to add Crosses,Rounds with the when the Game started and Update the player points
 
-	if (click_count == 36) {															//Game Ending Instance.
+	if (click_count == 36) {										//Game Ending Instance.
 		gameover = true;
 		glBegin(GL_POLYGON);
 		glColor3f(0.0, 0.0, 0.15);
@@ -93,10 +90,10 @@ void Display(void) {
 		}
 
 	}
-	glutSwapBuffers();																//Swapping the layers of the window
+	glutSwapBuffers();												//Swapping the layers of the window
 }
 
-void DrawString(void *font, float x, float y, string word) {							//Function to have Fonts
+void DrawString(void *font, float x, float y, string word) {		//Function to have Fonts
 	int i;
 	glRasterPos2f(x, y);
 	for (i = 0; i < word.length(); i++)
@@ -135,6 +132,7 @@ void Interface() {
 
 
 	glColor3f(0.0, 0.3, 0.6);
+	
 	//First Row 
 	glBegin(GL_POLYGON);
 	glVertex2f(305, 205);
@@ -400,7 +398,7 @@ void Interface() {
 	glVertex2f(830, 830);
 	glEnd();
 
-	//Player Box 1
+	//Moves Remaining Box
 	glBegin(GL_POLYGON);
 	glColor3f(1.0, 0.5, 0.0);
 	glVertex2f(59, 269);
@@ -421,7 +419,7 @@ void Interface() {
 	DrawString(GLUT_BITMAP_HELVETICA_18, 85, 295, "Moves Remaining");
 
 
-	//Player Box 2
+	//Player Box 1
 	glBegin(GL_POLYGON);
 	glColor3f(1.0, 0.5, 0.0);
 	glVertex2f(59, 419);
@@ -510,7 +508,7 @@ void GameStart(int button, int state, int x, int y) {									//Starts the game 
 			click_count = 0;
 		}
 	}
-	if (gameover == true && button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && x < 260 && x>60 && y < 700 && y>660) {
+	if (gameover == true && button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 		NewGame();
 		p1 = 0;
 		p2 = 0;
@@ -630,12 +628,10 @@ void WinInstance() {
 				if (flag == 1) {
 					p2 = p2 + 10;
 					printf("Horizontal(%d,%d) : p2 = %d \n", x, y, p2);
-					//DrawBars(x, y, 2);
 				}
 				else if (flag == 2) {
 					p1 = p1 + 10;
 					printf("Horizontal(%d,%d) : p1 = %d \n", x, y, p1);
-					//DrawBars(x, y, 2);
 				}
 			}
 			else {
@@ -655,13 +651,11 @@ void WinInstance() {
 				if (flag == 1) {
 					p2 = p2 + 10;
 					printf("diagonal forward(%d,%d) : p2 = %d \n", x, y, p2);
-					//DrawBars(x, y, 3);
 
 				}
 				else if (flag == 2) {
 					p1 = p1 + 10;
 					printf("diagonal forward(%d,%d) : p1 = %d \n", x, y, p1);
-					//DrawBars(x, y, 3);
 				}
 			}
 			else {
@@ -679,12 +673,12 @@ void WinInstance() {
 				if (flag == 1) {
 					p2 = p2 + 10;
 					printf("diagonal backward(%d,%d) : p2 = %d \n", x, y, p2);
-					//DrawBars(x, y, 4);
+					
 				}
 				else if (flag == 2) {
 					p1 = p1 + 10;
 					printf("diagonal backward(%d,%d) : p1 = %d \n", x, y, p1);
-					//DrawBars(x, y, 4);
+
 				}
 			}
 
